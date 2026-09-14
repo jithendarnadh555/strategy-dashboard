@@ -24,6 +24,7 @@ const ASSET_CLASSES = [
 ];
 
 const INTERVALS = [
+  { id: "5m", label: "5m", binance: "5m", twelve: "5min" },
   { id: "15m", label: "15m", binance: "15m", twelve: "15min" },
   { id: "1h", label: "1H", binance: "1h", twelve: "1h" },
   { id: "4h", label: "4H", binance: "4h", twelve: "4h" },
