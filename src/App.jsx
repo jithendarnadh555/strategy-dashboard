@@ -276,7 +276,7 @@ export default function StrategyDashboard() {
   const [assetClass, setAssetClass] = useState("crypto");
   const [symbol, setSymbol] = useState("");
   const [interval, setInterval_] = useState("1h");
-  const [apiKey, setApiKey] = useState("");
+  const [apiKey, setApiKey] = useState(import.meta.env.VITE_TWELVEDATA_KEY || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
