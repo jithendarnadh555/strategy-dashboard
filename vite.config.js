@@ -6,5 +6,5 @@ import react from "@vitejs/plugin-react";
 // <username>.github.io repo (root site), leave base as "/".
 export default defineConfig({
   plugins: [react()],
-  base: "/strategy-dashboard/",
+  base: "/",
 });
