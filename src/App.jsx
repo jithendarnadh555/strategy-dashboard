@@ -205,9 +205,9 @@ function analyze(candles) {
 // ---------- data fetchers ----------
 async function fetchBinance(symbolRaw, interval) {
   let symbol = symbolRaw.toUpperCase().replace(/[^A-Z]/g, "");
-  if (!symbol.endsWith("USDT") && !symbol.endsWith("USD") && !symbol.endsWith("BTC") && !symbol.endsWith("ETH")) {
-    symbol = symbol + "USDT";
-  }
+  const quotes = ["USDT", "USD", "BUSD", "BTC", "ETH"];
+  const hasQuote = quotes.some(q => symbol.length > q.length && symbol.endsWith(q));
+  if (!hasQuote) symbol = symbol + "USDT";
   const url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=260`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Binance couldn't find "${symbolRaw}" — check the symbol (try BTC, ETH, SOL...).`);
